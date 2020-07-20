@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+    <title>Accessible - Custom Checkbox Toggle Slider</title>
+    <style>
+      body {
+        text-align: center;
+        background: #e6f6e7;
+        min-height: 95vh;
+        margin: 0;
+        padding: 0;
+        border-bottom: 5vh solid #06a811;
+        font-family: "Myriad Pro", "Arial", sans;
+        font-size: 24px;
+      }
+      body.dark {
+        background: #011102;
+        color: #fff;
+      }
+
+      /* New Slider */
+      .react-toggle {
+        touch-action: pan-x;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .react-toggle--checked .react-toggle-track-check,
+      .react-toggle--checked .react-toggle-track-x {
+        opacity: 1;
+        -webkit-transition: opacity 0.25s ease;
+        transition: opacity 0.25s ease;
+      }
+      .react-toggle--checked .react-toggle-thumb {
+        left: 27px;
+        border-color: #19ab27;
+      }
+
+      .react-toggle--focus .react-toggle-thumb {
+        box-shadow: 0 0 2px 3px #0099e0;
+      }
+
+      .react-toggle-thumb:focus {
+        box-shadow: 0 0 2px 3px #0099e0;
+      }
+
+      .react-toggle-track {
+        width: 50px;
+        height: 24px;
+        padding: 0;
+        border-radius: 30px;
+        position: relative;
+        background-color: #4d4d4d;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+      .react-toggle-track .react-toggle-track-check {
+        position: absolute;
+        width: 14px;
+        height: 10px;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 0;
+        left: 8px;
+        -webkit-transition: opacity 0.25s ease;
+        transition: opacity 0.25s ease;
+      }
+      .react-toggle-track .react-toggle-track-x {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 0;
+        right: 10px;
+      }
+
+      .toggle_keGJ {
+        align-items: center;
+        display: flex;
+        height: 10px;
+        justify-content: center;
+        position: relative;
+        width: 10px;
+      }
+      .toggle_keGJ:before {
+        position: absolute;
+      }
+      .toggle_keGJ.moon_1gwN:before {
+        content: "\1F31C";
+      }
+      .toggle_keGJ.sun_3CPA:before {
+        content: "\1F31E";
+      }
+
+      .react-toggle-thumb {
+        -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #4d4d4d;
+        border-radius: 50%;
+        background-color: #fafafa;
+        box-sizing: border-box;
+        -webkit-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+      }
+
+      .react-toggle-screenreader-only {
+      }
+
+      .container {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body translate="no" class="dark">
+    <h1>Custom Checkbox Toggle Switch</h1>
+    <div class="react-toggle react-toggle--checked">
+      <div class="react-toggle-track">
+        <div class="react-toggle-track-check">
+          <span class="toggle_keGJ moon_1gwN"></span>
+        </div>
+        <div class="react-toggle-track-x">
+          <span class="toggle_keGJ sun_3CPA"></span>
+        </div>
+      </div>
+      <div class="react-toggle-thumb"></div>
+      <input type="checkbox" class="react-toggle-screenreader-only" checked />
+    </div>
+    <script id="rendered-js">
+      const checkboxElem = document.querySelector(
+        ".react-toggle-screenreader-only"
+      );
+      const parentElem = document.querySelector(".react-toggle");
+      const switchElem = document.querySelector(".react-toggle-thumb");
+      const wrapper = document.querySelector("body");
+
+      const checkBox = document.querySelector("[type=checkbox]");
+      checkBox.addEventListener("click", function (e) {
+        if (e.target.checked) {
+          wrapper.classList.add("dark");
+        } else {
+          wrapper.classList.remove("dark");
+        }
+      });
+
+      /* EVENT HANDLERS */
+      // TODO
+    </script>
+  </body>
+</html>

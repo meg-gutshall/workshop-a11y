@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aria-busy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="notify-busy" class="hide" aria-busy="false">
+        Updating it.. Please Hold.
+      </div>
+      <button>START UPDATE</button>
+    </main>
+    <script>
+      const button = document.querySelector("button");
+      const notifyBusy = document.querySelector("#notify-busy");
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (notifyBusy.getAttribute("aria-busy") == "false") {
+          notifyBusy.setAttribute("aria-busy", "true");
+          notifyBusy.classList.remove("hide");
+          button.innerText = "STOP UPDATE";
+          notifyBusy.focus();
+        } else {
+          notifyBusy.setAttribute("aria-busy", "false");
+          notifyBusy.classList.add("hide");
+          button.innerText = "START UPDATE";
+          notifyBusy.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

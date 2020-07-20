@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <title>Activity 3 - Accessible Form</title>
+    <style>
+      main {
+        width: 50vw;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <main>
+      <p style="font-size: 25px; font-weight: bold; color: #999;">Contact Us</p>
+      <form id="contact-form" name="contactForm" method="post" action="">
+        <div class="form-group">
+          <input
+            name="firstName"
+            class="form-control"
+            placeholder="First Name *"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            name="lastName"
+            class="form-control"
+            placeholder="Last Name *"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            name="email"
+            class="form-control"
+            placeholder="Email Address *"
+          />
+        </div>
+        <div class="form-group">
+          <input name="phone" class="form-control" placeholder="Phone # *" />
+        </div>
+        <div class="form-group">
+          <input
+            name="street"
+            class="form-control"
+            placeholder="Street Address *"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            id="apt"
+            name="apt"
+            class="form-control"
+            placeholder="Apt, Suite or Floor (Optional)"
+          />
+        </div>
+        <div class="form-group">
+          <input name="lastName" class="form-control" placeholder="City *" />
+        </div>
+        <div class="form-group">
+          <select name="state" id="state" class="form-control">
+            <option>State *</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input name="zip" class="form-control" placeholder="Zip Code *" />
+        </div>
+        <div class="form-group">
+          <input name="website" class="form-control" placeholder="Website *" />
+        </div>
+        <p style="font-size: 15px; font-weight: bold; color: #999;">
+          How Should We Get Back To You? *
+        </p>
+        <div class="form-group">
+          <input type="checkbox" value="emailMe" />
+          Email <br />
+          <input type="checkbox" value="callMe" />
+          Phone <br />
+          <input type="checkbox" value="mailMe" />
+          Mail <br />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            class="form-control"
+            placeholder="Message *"
+          ></textarea>
+        </div>
+        <button type="submit" class="form-control">Submit Contact Form</button>
+      </form>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script id="rendered-js">
+      $("#contact-form").submit(function (e) {
+        $("b").remove(".errorMessage");
+        $("input", this)
+          .not("#apt")
+          .each(function () {
+            $(this).removeAttr("style");
+            if (!this.value) {
+              e.preventDefault();
+              $(this).after(
+                '<b class="errorMessage" style="color:red;">Incorrect Entry</b>'
+              );
+              $(this).attr("style", "border:1px solid red;");
+            } else {
+              $(this).removeAttr("aria-invalid");
+            }
+          });
+        $("input[type=checkbox]", this).each(function () {
+          $(this).removeAttr("style");
+          if (!this.checked) {
+            e.preventDefault();
+            $(this).after(
+              '<b class="errorMessage" style="color:red;">Incorrect Entry</b>'
+            );
+            $(this).attr("style", "border:1px solid red;");
+          } else {
+            $(this).removeAttr("aria-invalid");
+          }
+        });
+        $("select", this).each(function () {
+          $(this).removeAttr("style");
+          if (this.value === "State *") {
+            e.preventDefault();
+            $(this).after(
+              '<b class="errorMessage" style="color:red;">Incorrect Entry</b>'
+            );
+            $(this).attr("style", "border:1px solid red;");
+          } else {
+            $(this).removeAttr("aria-invalid");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+      color="#111"
+    />
+    <title>Activity 1 - Focus &amp; Semantics</title>
+    <style>
+      .header {
+        background: wheat;
+        padding: 1em;
+      }
+      .nav {
+        display: flex;
+      }
+      .nav .nav-item {
+        padding-right: 0.8em;
+      }
+      .footer {
+        background: lightgreen;
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+      }
+      .main {
+        background: pink;
+        padding: 1em;
+        display: flex;
+        min-height: 60vh;
+      }
+      .main .section {
+        flex-basis: 70%;
+        padding-right: 0.8em;
+      }
+      .aside {
+        background-color: lightblue;
+        padding: 10px;
+        flex-basis: 50%;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        padding-right: 0.8em;
+      }
+      .h1 {
+        font-size: 1.5em;
+        font-weight: 900;
+      }
+      .h2 {
+        font-size: 1.1em;
+        font-weight: 900;
+      }
+      p.list-item::before {
+        content: "\2022";
+        padding-right: 10px;
+      }
+      .article.lang {
+        border: 2px dashed;
+        padding: 0 0.8em;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="header">
+      <div class="nav">
+        <div class="nav-item"><a href="">Home</a></div>
+        <div class="nav-item"><a href="">About Us</a></div>
+        <div class="nav-item"><a href="">History</a></div>
+        <div class="nav-item"><a href="">Contact Us</a></div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="section">
+        <div class="article">
+          <div class="h1">Intro to Web Accessibility</div>
+          <p>
+            "Accessibility" can be difficult to spell, but it doesn't have to be
+            difficult to accomplish. In this guide, you will see how to get some
+            easy wins to help improve accessibility with minimal effort, how you
+            can use what's built in to HTML to create more accessible and robust
+            interfaces, and how to leverage some advanced techniques for
+            creating polished accessible experiences.
+          </p>
+        </div>
+        <div class="article">
+          <div class="h2">Basic Steps</div>
+          <p>
+            For the rest of the guide, we'll dive into the practical aspects of
+            creating accessible web sites. We'll organize this effort around
+            three main subject areas:
+          </p>
+          <p class="list-item">
+            <strong>Focus:</strong> We'll look at how to build things that can
+            be operated with a keyboard instead of a mouse. This is important
+            for users with motor impairments, of course, but it also ensures
+            that your UI is in good shape for all users.
+          </p>
+          <p class="list-item">
+            <strong>Semantics:</strong> We'll make sure that we express our user
+            interface in a robust way that works with a variety of assistive
+            technologies.
+          </p>
+          <p class="list-item">
+            <strong>Styling:</strong> We'll consider visual design and look at
+            some techniques for making the visual elements of the interface as
+            flexible and usable as possible.
+          </p>
+        </div>
+        <div class="article lang">
+          <div class="h2">Language Importance</div>
+          <p>
+            English: Hello! My name is Navdeep Singh. I am 34 years old. I am
+            from India.
+          </p>
+          <p>
+            German: Hallo! Ich heise Navdeep Singh. Ich bin Vierunddreizig jahre
+            alt. Ich komme aus Indien.
+          </p>
+        </div>
+      </div>
+      <div class="aside">
+        <div class="h1">Workshop</div>
+        <div class="h2">Speaker: Navdeep Singh</div>
+        <p>Date: 24th July 2020</p>
+        <img
+          src="https://assets.codepen.io/220615/Navdeep+Singh-CodeLandSpeaker.png"
+        />
+      </div>
+    </div>
+    <div class="footer">
+      <div>&copy; Copyright 2020</div>
+      <div class="nav">
+        <div class="nav-item"><a href="">Guidelines</a></div>
+        <div class="nav-item"><a href="">Privacy Policy</a></div>
+      </div>
+    </div>
+  </body>
+</html>

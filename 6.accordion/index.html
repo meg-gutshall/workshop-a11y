@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Activity 6 - Accessible Accordion</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <style>
+      .hide {
+        display: none;
+      }
+      #post-title {
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <main>
+      <h1>Activity 6 - Accessible Accordion</h1>
+      <hr />
+      <a id="post-title"
+        >Post Information <i class="fa fa-plus-square fa-minus-square"></i
+      ></a>
+      <div id="post-panel" class="hide">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </main>
+    <script id="rendered-js">
+      const postTitle = document.querySelector("#post-title");
+      const sibling = postTitle.nextElementSibling;
+
+      postTitle.addEventListener("click", function (e) {
+        e.preventDefault();
+        sibling.classList.toggle("hide");
+        postTitle.querySelector("i").classList.toggle("fa-plus-square");
+      });
+    </script>
+  </body>
+</html>
