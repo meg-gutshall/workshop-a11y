@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Activity 7: Skip Links</title>
+<style>
+/* Skip link */
+
+
+body{
+  /* Fix Safari bug with viewport units in calc() */
+  min-height: 0vw;
+
+  /* Fluidly variable between: 16px @ 320px and 32px @ 1920px */
+  --space: calc(1rem + ((1vw - 0.2em) * 1));
+
+  margin: 0;
+  color: #666;
+  font-size: var(--space);
+  font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: hsl(269,19%,30%);
+  background-color: hsla(32,100%,85%,.35);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.4'/%3E%3C/filter%3E%3C/defs%3E%3C!-- %3Cpath filter='url(%23a)' opacity='.3' d='M0 0h1200v256H0z'/%3E--%3E%3Crect filter='url(%23a)' opacity='.3' width='100%25' height='100%25'/%3E%3C/svg%3E");
+}
+
+img {
+  width: 800px;
+  margin: 10px auto;
+  display: block;
+}
+
+main {
+  width: 800px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Fake nav */
+.fakeNav {
+  color: #fff;
+  background-color: #463b4c;
+  border: 2px solid #463b4c;
+}
+.fakeNav_lst {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.fakeNav_lnk {
+  display: block;
+  font-weight: bold;
+  color: #fff;
+  padding: .5em;
+}
+.fakeNav_lnk:focus {
+  outline: #fff solid .125rem;
+}
+</style>
+</head>
+<body translate="no">
+    <nav class=fakeNav>
+        <ul class=fakeNav_lst>
+            <li class=fakeNav_li><a class=fakeNav_lnk href>dummy nav link</a></li>
+            <li class=fakeNav_li><a class=fakeNav_lnk href>dummy nav link</a></li>
+        </ul>
+    </nav>
+    <img src="https://images.unsplash.com/photo-1455688606286-620943e0ef91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" />
+    <main id="main">
+        <h1>Main Content</h2>
+        The idea is simple enough: provide a link at the top of the page which jumps the user down to an anchor or target at the beginning of the main content. For the most part, it really is this easy, though there is more than one way to accomplish the goal. Some techniques are better than others. The techniques discussed here are:
+        Providing visible links at the top of the page
+        Providing visible links elsewhere on the page
+        Making the link invisible
+        Making the link invisible until it receives keyboard focus
+        <h2>Importance</h2>
+        The easiest method of creating a "skip navigation" link is to put it at the top of the page in regular text. Put the corresponding anchor (link destination) at the beginning of the main content.
+        The horizontal location of the link doesn't matter much. The link can be on the left side, the middle, the right, or in some location in between. The key is to make sure the link is one of the first items that screen readers hear and that keyboard users tab to. Otherwise, users may not realize there is a "skip navigation" link there at all, and may waste time trying to muddle through the extraneous links. Screen reader users especially may get impatient if they don't hear the "skip navigation" link very early in the page.
+        To be optimally usable, the link must also be visually apparent. A very small or hidden link does not benefit the audience that most needs "skip" links - sighted keyboard users.
+        The verdict: This method works and is highly accessible. A disadvantage of this approach is that the link may be intrusive to visual design - it must be visible and at the very beginning of the page. Also, the link is presented to all users, even sighted mouse users who may not use it, or that could potentially be confused by it.
+    </main>
+</body>
+</html>
