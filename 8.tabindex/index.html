@@ -84,11 +84,9 @@
       <div id="modal" role="modal">
         <h2>Alert Box</h2>
         <h5>I agree to the terms before proceeding.</h5>
-        <a href="#" class="keyboardTrap sr-only">.</a>
-        <button type="submit" name="submit" class="keyboardTrap" tabindex="-1">
+        <button type="submit" name="submit" class="keyboardTrap">
           I AGREE
         </button>
-        <a href="#" class="keyboardTrap sr-only">.</a>
       </div>
     </section>
     <script id="rendered-js">
@@ -101,11 +99,11 @@
 
       let outsideLinks = document.querySelectorAll("a:not(.keyboardTrap)");
 
+      // Onload if modal is viewable then focus on modal links
+      // TODO
+
       // Manually make input fields focusable
       modal.style.opacity = 1;
-      modalLinks.forEach((link) => {
-        link.setAttribute("tabindex", 0);
-      });
 
       // Append Overlay to Body
       let overlay = document.createElement("div");
