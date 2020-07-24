@@ -25,9 +25,9 @@
     <main>
       <h1>Activity 6 - Accessible Accordion</h1>
       <hr />
-      <a id="post-title"
-        >Post Information <i class="fa fa-plus-square fa-minus-square"></i
-      ></a>
+      <button id="post-title" aria-expanded="false">
+        Post Information <i class="fa fa-plus-square fa-minus-square"></i>
+      </button>
       <div id="post-panel" class="hide">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -55,8 +55,15 @@
 
       postTitle.addEventListener("click", function (e) {
         e.preventDefault();
-        sibling.classList.toggle("hide");
-        postTitle.querySelector("i").classList.toggle("fa-plus-square");
+        if (e.target.getAttribute('aria-expanded') == "false") {
+          e.target.setAttribute('aria-expanded', 'true');
+          sibling.classList.remove("hide");
+          postTitle.querySelector("i").classList.remove("fa-plus-square");
+        } else {
+          e.target.setAttribute('aria-expanded', 'false');
+          sibling.classList.add("hide");
+          postTitle.querySelector("i").classList.add("fa-plus-square");
+        }
       });
     </script>
   </body>
