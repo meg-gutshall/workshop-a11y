@@ -4,33 +4,35 @@
     <meta charset="UTF-8" />   
     <title>Activity 1 - Focus &amp; Semantics</title>
     <style>
-      .header {
+      header {
         background: wheat;
         padding: 1em;
       }
-      .nav {
+      nav {
         display: flex;
-      }
-      .nav .nav-item {
         padding-right: 0.8em;
       }
-      .footer {
+      nav > li {
+        list-style-type: none;
+        padding-right: 0.8em;
+      }
+      footer {
         background: lightgreen;
         padding: 1em;
         display: flex;
         justify-content: space-between;
       }
-      .main {
+      main {
         background: pink;
         padding: 1em;
         display: flex;
         min-height: 60vh;
       }
-      .main .section {
+      main, section {
         flex-basis: 70%;
         padding-right: 0.8em;
       }
-      .aside {
+      aside {
         background-color: lightblue;
         padding: 10px;
         flex-basis: 50%;
@@ -43,11 +45,11 @@
         display: inline;
         padding-right: 0.8em;
       }
-      .h1 {
+      h1 {
         font-size: 1.5em;
         font-weight: 900;
       }
-      .h2 {
+      h2 {
         font-size: 1.1em;
         font-weight: 900;
       }
@@ -55,7 +57,7 @@
         content: "\2022";
         padding-right: 10px;
       }
-      .article.lang {
+      article.lang {
         border: 2px dashed;
         padding: 0 0.8em;
       }
@@ -64,20 +66,20 @@
       }
     </style>
   </head>
-  <body translate="no">
-    <div class="header">
+  <body>
+    <header>
       <h1>Activity 1 - Focus & Semantics</h1>
-      <div class="nav">
-        <div class="nav-item"><a href="">Home</a></div>
-        <div class="nav-item"><a href="">About Us</a></div>
-        <div class="nav-item"><a href="">History</a></div>
-        <div class="nav-item"><a href="">Contact Us</a></div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="section">
-        <div class="article">
-          <div class="h1">Intro to Web Accessibility</div>
+      <nav aria-label="Primary">
+        <li><a href="">Home</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">History</a></li>
+        <li><a href="">Contact US</a></li>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article>
+          <h1>Intro to Web Accessibility</h1>
           <p>
             "Accessibility" can be difficult to spell, but it doesn't have to be
             difficult to accomplish. In this guide, you will see how to get some
@@ -86,58 +88,60 @@
             interfaces, and how to leverage some advanced techniques for
             creating polished accessible experiences.
           </p>
-        </div>
-        <div class="article">
-          <div class="h2">Basic Steps</div>
+        </article>
+        <article>
+          <h2>Basic Steps</h2>
           <p>
             For the rest of the guide, we'll dive into the practical aspects of
             creating accessible web sites. We'll organize this effort around
             three main subject areas:
           </p>
-          <p class="list-item">
-            <strong>Focus:</strong> We'll look at how to build things that can
-            be operated with a keyboard instead of a mouse. This is important
-            for users with motor impairments, of course, but it also ensures
-            that your UI is in good shape for all users.
-          </p>
-          <p class="list-item">
-            <strong>Semantics:</strong> We'll make sure that we express our user
-            interface in a robust way that works with a variety of assistive
-            technologies.
-          </p>
-          <p class="list-item">
-            <strong>Styling:</strong> We'll consider visual design and look at
-            some techniques for making the visual elements of the interface as
-            flexible and usable as possible.
-          </p>
-        </div>
-        <div class="article lang">
-          <div class="h2">Language Importance</div>
+          <ul>
+            <li>
+              <strong>Focus:</strong> We'll look at how to build things that can
+              be operated with a keyboard instead of a mouse. This is important
+              for users with motor impairments, of course, but it also ensures
+              that your UI is in good shape for all users.
+            </li>
+            <li>
+              <strong>Semantics:</strong> We'll make sure that we express our user
+              interface in a robust way that works with a variety of assistive
+              technologies.
+            </li>
+            <li>
+              <strong>Styling:</strong> We'll consider visual design and look at
+              some techniques for making the visual elements of the interface as
+              flexible and usable as possible.
+            </li>
+          </ul>
+        </article>
+        <article class="lang">
+          <h2>Language Importance</h2>
           <p>
             English: Hello! My name is Navdeep Singh. I am 34 years old. I am
             from India.
           </p>
-          <p>
+          <p lang="de">
             German: Hallo! Ich heise Navdeep Singh. Ich bin Vierunddreizig jahre
             alt. Ich komme aus Indien.
           </p>
-        </div>
-      </div>
-      <div class="aside">
-        <div class="h1">Workshop</div>
-        <div class="h2">Speaker: Navdeep Singh</div>
+        </article>
+      </section>
+      <aside>
+        <h1>Workshop</h1>
+        <h2>Speaker: Navdeep Singh</h2>
         <p>Date: 24th July 2020</p>
         <img
           src="https://assets.codepen.io/220615/Navdeep+Singh-CodeLandSpeaker.png"
         />
-      </div>
-    </div>
-    <div class="footer">
+      </aside>
+    </main>
+    <footer>
       <div>&copy; Copyright 2020</div>
-      <div class="nav">
-        <div class="nav-item"><a href="">Guidelines</a></div>
-        <div class="nav-item"><a href="">Privacy Policy</a></div>
-      </div>
-    </div>
+      <nav aria-label="Secondary">
+        <li><a href="">Guidelines</a></li>
+        <li><a href="">Privacy Policy</a></li>
+      </nav>
+    </footer>
   </body>
 </html>
